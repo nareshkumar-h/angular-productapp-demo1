@@ -1,0 +1,32 @@
+<h3>Products List</h3>
+<!--<table class="table table-bordered">
+    <thead><tr><th>Sno</th><th>Product Name</th><th>Price</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Mac</td><td>1000</td></tr>
+        <tr><td>2</td><td>Lenova</td><td>500</td></tr>
+    </tbody>
+</table>-->
+<button (click)="loadProducts()">Get Products</button>
+<button (click)="clear()">Clear</button>
+<br/>
+
+
+<input type="text" [(ngModel)]="name" placeholder="Product Name" required> 
+<input type="number" [(ngModel)]="price" placeholder="Price" required>
+<button (click)="addProduct()">Add Product</button> 
+
+
+
+
+
+
+<table class="table table-bordered" *ngIf="products.length>0">
+    <thead><tr><th>Sno</th><th>Product Name</th><th>Price</th></tr></thead>
+    <tbody *ngFor="let p of products">
+        <tr><td>{{p.id}}</td><td>{{p.name}}</td><td>{{p.price}}</td>
+            <td><a routerLink="../viewproduct" class="btn btn-primary" >Edit</a></td>
+            <td><button (click)="deleteProduct(p)" class="btn btn-danger">Delete</button></td>
+        </tr>
+   </tbody>
+</table>
