@@ -28,12 +28,19 @@ app.component.css - Contains the CSS structure for the component.
 app.component.html. Contains the html template for the component.
 app.component.ts - Contains the class for the component. Holds the logic to manage the functionality of the component.
 
-## Question Set #2: Run Angular Project 
+## Question Set #2: Bootstrapping
+#### What is bootstrapping?
+* When we talk about bootstrapping in anything computer related, we are talking about the first piece of code that is loaded. 
+* In the case of angular we have to tell it which component is the starting point for our application. 
+* Every application has at least one Angular module, the root module that you bootstrap to launch the application. 
+* By convention, it is usually called AppModule.
+#### What is a module?
+#### What is @NgModule? What are some of the attributes inside of the @NgModule decorator?
 
+## Question Set #3: Run Angular Project 
 #### How would I start a server using the Angular CLI? What is the name and default port of this server?
 * ng serve. localhost:4200.
 
-#### What interface does a component class implement and what method does it require the class implement?
 #### What is linting?
 * Linting is the process of checking the source code for programmatic and stylistic errors. 
 * It is useful in keeping code consistent as well as pointing out common mistakes that could potentially be problematic.
@@ -50,17 +57,30 @@ app.component.ts - Contains the class for the component. Holds the logic to mana
 * Angular Cli uses Webpack under the hood for bundling functionality, but it also gives us additional functionality. The cli can be used to start projects, create new components, services, pipes, etc.
 
 
-## Question Set #3: Angular Components and Directives
+## Question Set #4: Components 
 
 #### What is a decorator?
-#### What is a module?
-#### What is @NgModule? What are some of the attributes inside of the @NgModule decorator?
-#### What is bootstrapping?
 #### What is a component?
 #### What is @Component? What are some of the attributes inside of the @Component decorator?
 #### How would you add a new component to your project using the Angular CLI?
 #### How would you add a new component to your project without using the Angular CLI?
 #### How would I include a component on another component's HTML template page?
+#### What interface does a component class implement and what method does it require the class implement?
+#### What is the lifecycle of a component?
+* Angular creates it, renders it, creates and renders its children, checks it when its data-bound properties change, and destroys it before removing it from the DOM.
+
+#### What is the ngOnInit() function?
+* The ngOnInit() function gets called by default in any component created. It contains the logic to be executed upon the initialization of a component.
+
+## Question Set #5: SPA and Routing
+
+#### What is a SPA?
+*  Single-Page Application. This means that your web app has only a single html page and each "view" that the user sees is actually a fragment of code being added/removed.
+####  What is routing? Why does Angular implement its own routing module?
+* Routing refers to how the application will navigate between pages. Angular implements its own routing module in order to allow for single-page web applications.
+* We first need to add the router to our module, then use the forRoot() function to define all the paths that the router will be able to handle. The router will load the html fragment whereever it sees the <router-outlet> tag. You can use the [routerLink]="/path" attribute inside of html to tell the router to switch views.
+  
+## Question Set #6: Directives
 #### What is a directive?
 #### What are some of the different kinds of directives provided by Angular?
 * Component directives - Directives with a template
@@ -69,28 +89,12 @@ app.component.ts - Contains the class for the component. Holds the logic to mana
 #### How could we create an attribute directive?
 #### What is *ngIf and how does it work?
 #### What is *ngFor and how does it work?
+  
+## Question Set #7: Data Binding
 #### What is data binding? What are some different data binding options provided through Angular?
 #### What is event binding?
-
-
-## Question Set #4: SPA and Routing
-
-#### What is a SPA?
-*  Single-Page Application. This means that your web app has only a single html page and each "view" that the user sees is actually a fragment of code being added/removed.
-####  What is routing? Why does Angular implement its own routing module?
-* Routing refers to how the application will navigate between pages. Angular implements its own routing module in order to allow for single-page web applications.
-* We first need to add the router to our module, then use the forRoot() function to define all the paths that the router will be able to handle. The router will load the html fragment whereever it sees the <router-outlet> tag. You can use the [routerLink]="/path" attribute inside of html to tell the router to switch views.
   
-## Question Set #5: Architecture
-
-#### What is the lifecycle of a component?
-* Angular creates it, renders it, creates and renders its children, checks it when its data-bound properties change, and destroys it before removing it from the DOM.
-
-#### What is the ngOnInit() function?
-* The ngOnInit() function gets called by default in any component created. It contains the logic to be executed upon the initialization of a component.
-
-  
-## Question Set #6: Service
+## Question Set #8: Service
 * What is Dependency Injection?
 * How would you add a new service to your project using the Angular CLI?
 * How would you add a new service to your project without the Angular CLI?
@@ -101,4 +105,4 @@ app.component.ts - Contains the class for the component. Holds the logic to mana
 * What must you do in order to use Observables?
 * What is the difference between a Promise and an Observable?
   
-## Question Set #7: Pipes and Filters
+## Question Set #9: Pipes and Filters
