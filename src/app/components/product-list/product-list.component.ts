@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   products = [];
 
@@ -15,9 +16,15 @@ export class ProductListComponent implements OnInit {
     //this.loadProducts();
   }
  
+  /*loadProducts(){
+    this.products = this.productService.listProducts();  
+    //avoid calling servlets or backend api from component  
+  }
+*/
   loadProducts(){
-    this.products =  [ {"id":1,"name":"MAC","price":1000},
-    {"id":2,"name":"Lenova","price":500}];
+    this.productService.getProducts().subscribe((res)=>{
+      this.products = res;
+    });
   }
 
   clear(){
